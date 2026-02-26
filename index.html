@@ -1,0 +1,205 @@
+---
+layout: default
+title: 首頁
+description: 暖字表達寫作班——先暖心，再暖字。讓孩子對寫作產生安全感的地方。
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">暖字表達寫作班</div>
+      <h1>先暖心，<br>再暖字。</h1>
+      <p class="subtitle">
+        這不是一個讓孩子「變得更會寫作」的地方，<br>
+        而是讓孩子發現自己本來就有故事可以說的地方。
+      </p>
+      <div class="hero-cta">
+        <a href="{{ '/about' | relative_url }}" class="btn btn-primary">認識暖字</a>
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-outline">聯絡老師</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- 老師照片請放在 assets/images/teacher.jpg -->
+      {% assign teacher_img = site.url | append: '/assets/images/teacher.jpg' %}
+      <div class="hero-image-placeholder">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <span>李淑貞老師照片</span>
+        <small>請放置 assets/images/teacher.jpg</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 核心理念 -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>暖字與眾不同的三件事</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🌱</div>
+        <h3>先給安全感</h3>
+        <p>孩子不敢寫，是因為還沒有安全感。暖字的第一課，不是寫作技巧，而是讓每個孩子相信：「我的故事值得被聽見。」</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">👁️</div>
+        <h3>看見每個孩子</h3>
+        <p>每個孩子都有獨特的聲音。老師不教孩子「寫得正確」，而是陪孩子找到屬於自己的表達方式，讓個體的聲音被看見。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💌</div>
+        <h3>陪伴而非評分</h3>
+        <p>寫作不是考試。在暖字，孩子的每一篇文章都是一封信——老師認真閱讀，真誠回應，一段共同走過的寫作旅程。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 近期教學札記 -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>近期教學札記</h2>
+      <p>老師記錄課堂裡的每一個感動與觀察</p>
+      <div class="underline"></div>
+    </div>
+    <div class="cards-grid">
+      {% assign blog_posts = site.posts | where: "category", "blog" | limit: 3 %}
+      {% if blog_posts.size > 0 %}
+        {% for post in blog_posts %}
+          <article class="card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">教學札記</span>
+                <time>{{ post.date | date: "%Y.%-m.%-d" }}</time>
+              </div>
+              <h3>{{ post.title }}</h3>
+              <p>{{ post.excerpt | strip_html | truncate: 80 }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ post.url | relative_url }}" class="card-link">閱讀全文</a>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        {% assign sample_posts = "春天的第一堂課,那天孩子說，他不知道要寫什麼,寫作金三角：從觀察開始" | split: "," %}
+        {% assign sample_dates = "2026.3.15,2026.3.8,2026.2.28" | split: "," %}
+        {% assign sample_excerpts = "帶著孩子走到校園一角，讓他們靜靜觀察三分鐘。「我看到一隻螞蟻在搬一粒比牠大三倍的餅乾屑。」其中一個孩子這樣說...,這是很多孩子說過的話。不知道要寫什麼，是因為還沒有發現：生活裡的每一件小事，都可以是素材。那天我們聊了三十分鐘的「昨天最無聊的事」...,畫面、細節、感受——這是暖字的寫作金三角。不教孩子華麗的詞藻，而是教他們先看清楚眼前的世界..." | split: "," %}
+        {% for i in (0..2) %}
+          <article class="card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">教學札記</span>
+                <time>{{ sample_dates[i] }}</time>
+              </div>
+              <h3>{{ sample_posts[i] }}</h3>
+              <p>{{ sample_excerpts[i] | truncate: 80 }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ '/blog' | relative_url }}" class="card-link">閱讀全文</a>
+            </div>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="flex-center">
+      <a href="{{ '/blog' | relative_url }}" class="btn btn-orange">看更多札記</a>
+    </div>
+  </div>
+</section>
+
+<!-- 學生作品亮點 -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>孩子的聲音</h2>
+      <p>每一篇作品，都是孩子給世界的一封信</p>
+      <div class="underline"></div>
+    </div>
+    <div class="cards-grid">
+      {% assign works_posts = site.posts | where: "category", "works" | limit: 3 %}
+      {% if works_posts.size > 0 %}
+        {% for post in works_posts %}
+          <article class="card work-card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">學生作品</span>
+                <time>{{ post.date | date: "%Y.%-m.%-d" }}</time>
+              </div>
+              <h3>{{ post.title }}</h3>
+              <div class="author-info">✍️ {{ post.author }}{% if post.grade %} · {{ post.grade }}{% endif %}</div>
+              <p style="margin-top:0.75rem;">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ post.url | relative_url }}" class="card-link">閱讀全文</a>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        {% assign sample_works = "推開門,那個夏天的冰箱,我的阿嬤會說故事" | split: "," %}
+        {% assign sample_authors = "奕鈞 · 高年級,小雨 · 中年級,承熙 · 高年級" | split: "," %}
+        {% assign sample_work_excerpts = "門，是什麼？是分隔兩個世界的牆，還是讓兩個世界互相靠近的橋？每次我推開門，我都覺得我正在進入另一個故事...,夏天的冰箱和冬天的不一樣。冬天的冰箱是藏東西的，夏天的冰箱是救命的。那個夏天特別熱，阿公把西瓜切成一片一片...,阿嬤說故事的時候，眼睛會亮起來。她說的故事不在書裡，都在她的心裡——那個她年輕時走過的山路..." | split: "," %}
+        {% for i in (0..2) %}
+          <article class="card work-card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">學生作品</span>
+              </div>
+              <h3>{{ sample_works[i] }}</h3>
+              <div class="author-info">✍️ {{ sample_authors[i] }}</div>
+              <p style="margin-top:0.75rem;">{{ sample_work_excerpts[i] | truncate: 80 }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ '/works' | relative_url }}" class="card-link">閱讀全文</a>
+            </div>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="flex-center">
+      <a href="{{ '/works' | relative_url }}" class="btn btn-orange">看更多作品</a>
+    </div>
+  </div>
+</section>
+
+<!-- 家長回饋 -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>家長怎麼說</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="testimonial-text">孩子以前一看到作文就頭痛，上了暖字之後，有一天他主動拿著本子說要寫日記。那一刻我真的很感動。</p>
+        <p class="testimonial-author">— 小學四年級家長</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">老師每次都認真地回應孩子的作品，讓孩子覺得自己寫的東西真的被看見了。這種被重視的感覺，是孩子學習最大的動力。</p>
+        <p class="testimonial-author">— 小學五年級家長</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">不只是教寫作，老師教的是怎麼觀察生活、怎麼表達感受。這些能力讓孩子受益的範圍，遠超過作文課本身。</p>
+        <p class="testimonial-author">— 小學三年級家長</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 區塊 -->
+<section class="section" style="text-align:center;">
+  <div class="container">
+    <h2 style="margin-bottom:1rem;">想讓孩子試試看？</h2>
+    <p style="color:var(--brown-light);max-width:480px;margin:0 auto 2rem;line-height:1.8;">
+      不需要先確定要報名，歡迎先來聊聊孩子的狀況。<br>
+      每個孩子都值得被好好理解。
+    </p>
+    <a href="{{ '/contact' | relative_url }}" class="btn btn-orange" style="font-size:1.05rem;padding:0.9rem 2.5rem;">和老師聊聊</a>
+  </div>
+</section>

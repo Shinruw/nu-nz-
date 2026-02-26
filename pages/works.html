@@ -1,0 +1,122 @@
+---
+layout: default
+title: 學生作品
+description: 暖字學生的作品發表舞台，每一篇文字都是孩子給世界的一封信
+permalink: /works/
+---
+
+<div class="page-hero">
+  <div class="container">
+    <h1>學生作品</h1>
+    <p>這是孩子的舞台。<br>每一篇文字，都是孩子給世界的一封信。</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% assign works_posts = site.posts | where: "category", "works" %}
+    {% if works_posts.size > 0 %}
+
+      <!-- 依學生分組 -->
+      {% assign authors = works_posts | map: "author" | uniq | sort %}
+
+      <div style="margin-bottom:2.5rem;">
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
+          <span style="font-size:0.9rem;color:var(--brown-light);">依學生瀏覽：</span>
+          {% for author in authors %}
+            <a href="#{{ author | slugify }}" class="card-tag" style="text-decoration:none;cursor:pointer;">{{ author }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        {% for post in works_posts %}
+          <article class="card work-card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">學生作品</span>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%-m.%-d" }}</time>
+              </div>
+              <h3><a href="{{ post.url | relative_url }}" style="color:var(--brown);">{{ post.title }}</a></h3>
+              <div class="author-info">
+                ✍️
+                <a href="#{{ post.author | slugify }}" style="color:var(--orange);">{{ post.author }}</a>
+                {% if post.grade %} · {{ post.grade }}{% endif %}
+              </div>
+              <p style="margin-top:0.75rem;">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ post.url | relative_url }}" class="card-link">閱讀全文</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <!-- 尚無作品時的提示 -->
+      <div style="text-align:center;padding:4rem 0;">
+        <div style="font-size:3rem;margin-bottom:1rem;">✍️</div>
+        <h3 style="color:var(--brown-light);font-weight:400;margin-bottom:0.75rem;">孩子的作品即將登場</h3>
+        <p style="color:var(--brown-light);max-width:420px;margin:0 auto 2rem;line-height:1.8;">
+          這裡是每一位暖字孩子的舞台，<br>
+          他們的文字即將在這裡被看見。
+        </p>
+
+        <!-- 範例作品 -->
+        <div class="cards-grid" style="text-align:left;max-width:900px;margin:0 auto;">
+          <article class="card work-card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">學生作品</span>
+                <time>2026.3.1</time>
+              </div>
+              <h3>推開門</h3>
+              <div class="author-info">✍️ 奕鈞 · 高年級</div>
+              <p style="margin-top:0.75rem;">門，是什麼？是分隔兩個世界的牆，還是讓兩個世界互相靠近的橋？每次我推開門，我都覺得我正在進入另一個故事...</p>
+            </div>
+            <div class="card-footer">
+              <span style="color:var(--brown-light);font-size:0.88rem;">即將發布</span>
+            </div>
+          </article>
+          <article class="card work-card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">學生作品</span>
+                <time>2026.3.1</time>
+              </div>
+              <h3>那個夏天的冰箱</h3>
+              <div class="author-info">✍️ 小雨 · 中年級</div>
+              <p style="margin-top:0.75rem;">夏天的冰箱和冬天的不一樣。冬天的冰箱是藏東西的，夏天的冰箱是救命的。那個夏天特別熱，阿公把西瓜切成一片一片...</p>
+            </div>
+            <div class="card-footer">
+              <span style="color:var(--brown-light);font-size:0.88rem;">即將發布</span>
+            </div>
+          </article>
+          <article class="card work-card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">學生作品</span>
+                <time>2026.2.20</time>
+              </div>
+              <h3>我的阿嬤會說故事</h3>
+              <div class="author-info">✍️ 承熙 · 高年級</div>
+              <p style="margin-top:0.75rem;">阿嬤說故事的時候，眼睛會亮起來。她說的故事不在書裡，都在她的心裡——那個她年輕時走過的山路...</p>
+            </div>
+            <div class="card-footer">
+              <span style="color:var(--brown-light);font-size:0.88rem;">即將發布</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section--alt" style="text-align:center;">
+  <div class="container">
+    <p style="font-size:1.05rem;color:var(--brown-light);font-style:italic;max-width:520px;margin:0 auto 1.5rem;line-height:1.9;">
+      每一位孩子都有一個專屬頁面，可以看到他所有作品的完整歷程。
+    </p>
+    <a href="{{ '/courses' | relative_url }}" class="btn btn-orange">了解課程</a>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<article>
+  <div class="post-hero">
+    <div class="container">
+      {% if page.category == 'works' %}
+        <div class="work-author-badge">✍️ {{ page.author }}{% if page.grade %} · {{ page.grade }}{% endif %}</div>
+        <h1>{{ page.title }}</h1>
+      {% else %}
+        <div class="card-tag" style="display:inline-block;margin-bottom:1rem;">教學札記</div>
+        <h1>{{ page.title }}</h1>
+      {% endif %}
+      <div class="post-meta">
+        <span>{{ page.date | date: "%Y 年 %-m 月 %-d 日" }}</span>
+        {% if page.tags %}
+          {% for tag in page.tags %}
+            <span>#{{ tag }}</span>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="post-content">
+    {{ content }}
+
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--peach);">
+      {% if page.category == 'works' %}
+        <a href="{{ '/works' | relative_url }}" class="card-link">← 回到學生作品</a>
+      {% else %}
+        <a href="{{ '/blog' | relative_url }}" class="card-link">← 回到教學札記</a>
+      {% endif %}
+    </div>
+  </div>
+</article>

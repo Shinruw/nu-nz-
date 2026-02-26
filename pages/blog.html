@@ -1,0 +1,94 @@
+---
+layout: default
+title: 教學札記
+description: 李淑貞老師記錄課堂裡的感動、觀察與教學思考
+permalink: /blog/
+---
+
+<div class="page-hero">
+  <div class="container">
+    <h1>教學札記</h1>
+    <p>老師記錄課堂裡的每一個感動與觀察<br>每一篇都是與家長之間的一次對話</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% assign blog_posts = site.posts | where: "category", "blog" %}
+    {% if blog_posts.size > 0 %}
+      <div class="cards-grid">
+        {% for post in blog_posts %}
+          <article class="card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">教學札記</span>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%-m.%-d" }}</time>
+              </div>
+              <h3><a href="{{ post.url | relative_url }}" style="color:var(--brown);">{{ post.title }}</a></h3>
+              <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+              {% if post.tags %}
+                <div style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+                  {% for tag in post.tags %}
+                    <span style="font-size:0.78rem;color:var(--brown-light);">#{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            <div class="card-footer">
+              <a href="{{ post.url | relative_url }}" class="card-link">閱讀全文</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <!-- 尚未新增文章時的提示 -->
+      <div style="text-align:center;padding:4rem 0;">
+        <div style="font-size:3rem;margin-bottom:1rem;">📝</div>
+        <h3 style="color:var(--brown-light);font-weight:400;margin-bottom:0.75rem;">教學札記陸續更新中</h3>
+        <p style="color:var(--brown-light);max-width:420px;margin:0 auto 2rem;line-height:1.8;">
+          老師即將把課堂裡的觀察與感動寫成文字，<br>
+          敬請期待。
+        </p>
+
+        <!-- 範例文章預覽 -->
+        <div class="cards-grid" style="text-align:left;max-width:900px;margin:0 auto;">
+          <article class="card" style="opacity:0.6;">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">教學札記</span>
+                <time>2026.3.15</time>
+              </div>
+              <h3>春天的第一堂課</h3>
+              <p>帶著孩子走到校園一角，讓他們靜靜觀察三分鐘。「我看到一隻螞蟻在搬一粒比牠大三倍的餅乾屑。」那個細節，後來成了他最好的一篇作品的開頭...</p>
+            </div>
+            <div class="card-footer">
+              <span style="color:var(--brown-light);font-size:0.88rem;">即將發布</span>
+            </div>
+          </article>
+          <article class="card" style="opacity:0.6;">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">教學札記</span>
+                <time>2026.3.8</time>
+              </div>
+              <h3>那天孩子說，他不知道要寫什麼</h3>
+              <p>這是很多孩子說過的話。不知道要寫什麼，是因為還沒有發現：生活裡的每一件小事，都可以是素材...</p>
+            </div>
+            <div class="card-footer">
+              <span style="color:var(--brown-light);font-size:0.88rem;">即將發布</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section--alt" style="text-align:center;">
+  <div class="container">
+    <p style="font-size:1.05rem;color:var(--brown-light);font-style:italic;max-width:560px;margin:0 auto 1.5rem;line-height:1.9;">
+      「老師不需要擔心『夠不夠格發文』，教學路上的每一個觀察、每一次感動，都值得記錄。」
+    </p>
+    <a href="{{ '/contact' | relative_url }}" class="btn btn-orange">聯絡老師</a>
+  </div>
+</section>

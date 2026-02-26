@@ -1,0 +1,53 @@
+title: 暖字表達寫作班
+description: 先暖心，再暖字。一個讓孩子對寫作產生安全感的地方。
+baseurl: ""
+url: ""
+
+author:
+  name: 李淑貞
+  email: ""
+
+lang: zh-TW
+encoding: UTF-8
+
+# Build settings
+future: true
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections
+collections:
+  works:
+    output: true
+    permalink: /works/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "works"
+    values:
+      layout: "work"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - "*.docx"
