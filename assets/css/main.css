@@ -764,3 +764,48 @@ p  { margin-bottom: 1rem; }
   justify-content: center;
   margin-top: 2.5rem;
 }
+
+/* ── Mobile Optimizations (≤ 768px) ── */
+@media (max-width: 768px) {
+  /* 縮減 section 上下間距 */
+  .section { padding: 3rem 0; }
+  .section-header { margin-bottom: 2rem; }
+
+  /* Hero */
+  .hero { padding: 3.5rem 0 3rem; }
+  .page-hero { padding: 2.5rem 0 2rem; }
+  .post-hero { padding: 2.5rem 0 2rem; }
+
+  /* Cards 強制單欄 */
+  .cards-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  /* 聯絡卡 padding */
+  .contact-card { padding: 2rem 1.5rem; }
+
+  /* Post 內文底部 padding */
+  .post-content { padding: 2rem 1.25rem 3rem; }
+
+  /* 老師照片佔位高度 */
+  .about-photo-placeholder { height: 240px; }
+
+  /* LINE 浮動按鈕：縮成圓形圖示 */
+  .line-float { bottom: 1.25rem; right: 1.25rem; }
+  .line-float .line-label { display: none; }
+  .line-float a { padding: 0.85rem; border-radius: 50%; gap: 0; }
+}
+
+/* ── Small Screen (≤ 480px) ── */
+@media (max-width: 480px) {
+  .container { padding: 0 1rem; }
+
+  /* 核心理念也單欄 */
+  .values-grid { grid-template-columns: 1fr; }
+
+  /* 按鈕組直排 */
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn { width: 100%; max-width: 260px; text-align: center; }
+
+  /* hero 圖佔位縮小 */
+  .hero-image-placeholder, .hero-photo { width: 200px; height: 240px; }
+}
