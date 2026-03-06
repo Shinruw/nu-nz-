@@ -98,19 +98,13 @@ permalink: /about/
       <div class="underline"></div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;margin:0 auto;">
-      {% for i in (1..3) %}
-      <div style="background:var(--peach);border-radius:16px;height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--brown-light);gap:0.5rem;font-size:0.88rem;">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="opacity:0.4;">
-          <rect x="3" y="3" width="18" height="18" rx="2"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <polyline points="21 15 16 10 5 21"/>
-        </svg>
-        <span>課堂照片 {{ i }}</span>
-        <small>assets/images/class-{{ i }}.jpg</small>
+      {% assign class_photos = "class-1.jpg,class-2.jpg,class-3.jpg,class-4.jpg" | split: "," %}
+      {% for photo in class_photos %}
+      <div style="border-radius:16px;overflow:hidden;height:220px;">
+        <img src="{{ '/assets/images/' | append: photo | relative_url }}" alt="課堂照片" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       {% endfor %}
     </div>
-    <p style="text-align:center;color:var(--brown-light);font-size:0.88rem;margin-top:1rem;">請將課堂照片放置於 assets/images/ 目錄</p>
   </div>
 </section>
 
