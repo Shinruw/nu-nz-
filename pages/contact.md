@@ -8,7 +8,6 @@ permalink: /contact/
 <div class="page-hero">
   <div class="container">
     <h1>聯絡老師</h1>
-    <p>不管是想了解課程，還是只是想聊聊孩子的寫作狀況，都歡迎來找我說說話。</p>
   </div>
 </div>
 
@@ -29,26 +28,6 @@ permalink: /contact/
         </svg>
         加 LINE 找老師聊聊
       </a>
-    </div>
-
-    <div style="max-width:560px;margin:3rem auto 0;text-align:center;">
-      <div style="background:var(--peach);border-radius:16px;padding:2rem;">
-        <h3 style="color:var(--brown);margin-bottom:1rem;font-size:1rem;">聯絡後，老師通常會：</h3>
-        <div style="display:flex;flex-direction:column;gap:0.75rem;text-align:left;">
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="color:var(--orange);font-size:1.1rem;">①</span>
-            <p style="margin:0;font-size:0.92rem;color:var(--brown-light);line-height:1.7;">先了解孩子的年齡、寫作現況、對寫作的感受</p>
-          </div>
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="color:var(--orange);font-size:1.1rem;">②</span>
-            <p style="margin:0;font-size:0.92rem;color:var(--brown-light);line-height:1.7;">根據孩子的情況，誠心建議是否適合暖字的課程</p>
-          </div>
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="color:var(--orange);font-size:1.1rem;">③</span>
-            <p style="margin:0;font-size:0.92rem;color:var(--brown-light);line-height:1.7;">如果合適，安排一堂體驗課，讓孩子和老師先認識</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
