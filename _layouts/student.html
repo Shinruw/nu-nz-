@@ -20,26 +20,19 @@ layout: default
 <section class="section">
   <div class="container">
     {% if works.size > 0 %}
-      <table class="works-table">
-        <thead>
-          <tr>
-            <th>作品標題</th>
-            <th>學校</th>
-            <th>年級</th>
-            <th>日期</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for work in works %}
-            <tr>
-              <td><a href="{{ work.url | relative_url }}" style="color:var(--brown);font-weight:500;">{{ work.title }}</a></td>
-              <td>{{ work.school }}</td>
-              <td>{{ work.grade }}</td>
-              <td>{{ work.date | date: "%Y.%-m.%-d" }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <div class="student-works-list">
+        {% for work in works %}
+          <article class="student-work-item">
+            <div class="student-work-header">
+              <h2 class="student-work-title">{{ work.title }}</h2>
+              <time class="student-work-date">{{ work.date | date: "%Y.%-m.%-d" }}</time>
+            </div>
+            <div class="student-work-body">
+              {{ work.content }}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
     {% else %}
       <p style="color:var(--brown-light);text-align:center;padding:3rem 0;">作品即將登場。</p>
     {% endif %}

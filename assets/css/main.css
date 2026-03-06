@@ -611,31 +611,51 @@ p  { margin-bottom: 1rem; }
   margin-top: 0.5rem;
 }
 
-/* Student collection page */
-.works-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1rem;
+/* Student works list */
+.student-works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 720px;
+  margin: 0 auto;
 }
-.works-table th {
-  text-align: left;
-  padding: 0.75rem 1rem;
-  border-bottom: 2px solid var(--peach);
-  color: var(--brown-light);
-  font-weight: 500;
-  font-size: 0.88rem;
+.student-work-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--orange);
+  box-shadow: var(--shadow);
+  padding: 2rem 2.25rem;
 }
-.works-table td {
-  padding: 1rem 1rem;
+.student-work-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--peach);
+  flex-wrap: wrap;
+}
+.student-work-title {
+  font-size: 1.15rem;
   color: var(--brown);
-  vertical-align: middle;
+  margin: 0;
 }
-.works-table tr:last-child td {
-  border-bottom: none;
+.student-work-date {
+  font-size: 0.85rem;
+  color: var(--brown-light);
+  white-space: nowrap;
 }
-.works-table tr:hover td {
-  background: var(--cream);
+.student-work-body {
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--brown);
+}
+.student-work-body p {
+  margin-bottom: 1rem;
+}
+.student-work-body p:last-child {
+  margin-bottom: 0;
 }
 
 /* ── About Page ── */
