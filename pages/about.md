@@ -8,7 +8,7 @@ permalink: /about/
 <div class="page-hero">
   <div class="container">
     <h1>關於暖字</h1>
-    <p>認識這個讓孩子對寫作產生安全感的地方</p>
+    <p>讓孩子對寫作產生安全感的地方</p>
   </div>
 </div>
 
@@ -19,18 +19,15 @@ permalink: /about/
         <img src="{{ '/assets/images/teacher.jpg' | relative_url }}" alt="李淑貞老師" class="about-teacher-img">
       </div>
       <div class="about-text">
-        <h2>李淑貞老師的故事</h2>
+        <h2>關於老師</h2>
         <p>
-          小時候，我是一個很不會表達自己的孩子。不是因為沒有感受，而是不知道怎麼把心裡的東西說出來、寫出來。直到有一天，有個老師讀了我的作文，然後跟我說：「你寫的這一段，讓我想起了我自己的阿嬤。」
+          我是 Kiwi 李淑貞老師，畢業於台東大學兒童文學研究所，熱愛啟發式的教學方式，讓孩子們能有啟發式的學習成長。曾指導課後共學團、國中小團體輔導活動、新竹千樹成林創意作文老師等經歷，爾後開創了「暖字表達寫作教室」。
         </p>
         <p>
-          那一刻，我才發現——原來我寫的東西，真的可以觸動另一個人。那種感覺，改變了我和寫作的關係。
+          暖字寫作邁入第十年，透過「先暖心，再暖字」的教學理念，幫助遇到寫作困難孩子，以啟發式教學，啟動他們的表達開關，讓寫作文成為他們暢所欲言的舞台，並在考試中能獲得更上一層樓的自我肯定。
         </p>
         <p>
-          後來我成為老師，我想把這種感覺給每一個孩子。不是要他們寫得「好」，而是要讓他們知道：自己的故事，值得被聽見。
-        </p>
-        <p style="font-style:italic;color:var(--brown-light);">
-          — 李淑貞老師
+          <a href="https://www.facebook.com/deerwriting" target="_blank" rel="noopener" style="color:var(--orange);font-weight:600;">暖字表達寫作臉書粉絲團 →</a>
         </p>
       </div>
     </div>
@@ -40,31 +37,19 @@ permalink: /about/
 <section class="section section--alt">
   <div class="container">
     <div class="section-header">
-      <h2>教學理念</h2>
-      <p>先暖心，再暖字</p>
+      <h2>先暖心，再暖字</h2>
+      <p>鬆動孩子的寫作困境</p>
       <div class="underline"></div>
     </div>
-    <div class="values-grid" style="max-width:900px;margin:0 auto;">
-      <div class="value-card">
-        <div class="value-icon">❤️</div>
-        <h3>溫暖</h3>
-        <p>讓孩子對寫作產生安全感，先暖心，再暖字。在一個溫暖的環境裡，孩子才能放心打開心房。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">🗣️</div>
-        <h3>真誠對話</h3>
-        <p>老師與孩子、老師與家長之間真實的雙向交流。每一篇作品都值得被認真閱讀與回應。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">🌟</div>
-        <h3>重視個體</h3>
-        <p>每個孩子都有獨特的聲音，寫作是自我表達的出口。我們不追求統一的標準答案。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">🌿</div>
-        <h3>陪伴成長</h3>
-        <p>不只是課程，更是一段共同走過的寫作旅程。老師在每個孩子身邊，一步一步陪著走。</p>
-      </div>
+    <div style="max-width:780px;margin:0 auto;color:var(--brown-light);line-height:2;font-size:1.05rem;">
+      <h3 style="color:var(--brown);margin-bottom:1.2rem;">先暖心，由此啟動寫作開關吧！</h3>
+      <p>我常鼓勵孩子們「大膽寫出心裡畫（話）」開始，這句話像是一句奇妙的咒語，能鼓勵他們放開對作文排斥的心裡，慢慢地敞開心胸去接受。</p>
+      <p>印象很深刻一個孩子在第一堂課中，他寫下：「我是小鳥，站在一顆長滿刺的樹上。」從文中，我看到孩子對寫作的壓力很大，那些樹上的刺，就像他寫作文路上的荊棘。</p>
+      <p>接受孩子最原始的心情，對他而言寫作相當棘手，我看到他以兩行字展現的負面壓力。在後續的課堂中，循序漸進地引導他，讓他能釋放對寫作的恐懼，能開始放心地寫作，這是趟「暖心」的旅程。</p>
+<br/>
+      <h3 style="color:var(--brown);margin-bottom:1.2rem;">再暖字，讓孩子文思泉湧的寫作金三角</h3>
+      <p>將心暖和了起來，再藉由暖字的「寫作金三角」，來「大膽寫出心裡畫（話）」，將心中的畫面練習描述出來，加入細節與感受成為想說的話。如此為寫作體驗鋪上正面的色彩，不再視寫作為畏途。</p>
+      <p>寫作金三角能讓孩子勇敢地說出故事，像是「啟動了開關」一樣。原本有內向寡言的孩子，在上了暖字寫作課以後，媽媽跟我說：「老師，他現在變成話癆了耶！每天跟我聊個不停～」</p>
     </div>
   </div>
 </section>
@@ -72,29 +57,36 @@ permalink: /about/
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>寫作金三角</h2>
-      <p>暖字的核心教學方法</p>
-      <div class="underline"></div>
+      <h2>寫作金三角，讓孩子文思泉湧</h2>
+       <div class="underline"></div>
     </div>
-    <div class="triangle-visual">
-      <div class="triangle-top">
-        <div class="triangle-label">畫面</div>
-        <div class="triangle-desc">你看到了什麼？</div>
-      </div>
-      <div class="triangle-bottom">
-        <div class="triangle-left">
-          <div class="triangle-label">細節</div>
-          <div class="triangle-desc">哪個細節讓你印象深刻？</div>
+
+    <div style="position:relative;max-width:480px;margin:0 auto;aspect-ratio:1/0.81;overflow:visible;">
+      <!-- 正三角形背景：clip-path 頂點對應三個圓心位置 -->
+      <div style="position:absolute;inset:0;background:linear-gradient(160deg,var(--orange) 0%,#F0A070 100%);clip-path:polygon(50% 9%,83% 80%,17% 80%);opacity:0.15;"></div>
+      <!-- 畫面（頂點） -->
+      <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);text-align:center;width:160px;">
+        <div style="background:var(--orange);color:#fff;border-radius:50%;width:72px;height:72px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;box-shadow:0 4px 12px rgba(232,131,74,0.35);">
+          <span style="font-weight:700;font-size:1.05rem;">畫面</span>
         </div>
-        <div class="triangle-right">
-          <div class="triangle-label">感受</div>
-          <div class="triangle-desc">那時候你有什麼感覺？</div>
+        <p style="font-size:0.78rem;color:var(--brown-light);line-height:1.5;margin:0;">生活與事件的畫面<br>如身歷其境記錄下來</p>
+      </div>
+      <!-- 細節（左下） -->
+      <div style="position:absolute;bottom:0;left:0;text-align:center;width:160px;">
+        <div style="background:var(--peach);border:2px solid var(--orange);color:var(--brown);border-radius:50%;width:72px;height:72px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;">
+          <span style="font-weight:700;font-size:1.05rem;">細節</span>
         </div>
+        <p style="font-size:0.78rem;color:var(--brown-light);line-height:1.5;margin:0;">畫面裡的影像<br>透過文字描繪</p>
+      </div>
+      <!-- 感受（右下） -->
+      <div style="position:absolute;bottom:0;right:0;text-align:center;width:160px;">
+        <div style="background:var(--peach);border:2px solid var(--orange);color:var(--brown);border-radius:50%;width:72px;height:72px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.5rem;">
+          <span style="font-weight:700;font-size:1.05rem;">感受</span>
+        </div>
+        <p style="font-size:0.78rem;color:var(--brown-light);line-height:1.5;margin:0;">情緒感受<br>將心情抒發</p>
       </div>
     </div>
-    <div style="max-width:680px;margin:2.5rem auto 0;text-align:center;color:var(--brown-light);line-height:1.9;">
-      <p>我不教孩子先想「要寫什麼主題」，而是先帶他們觀察——觀察一個畫面、一個細節、一種感受。當這三者都有了，文字自然就流出來了。</p>
-    </div>
+
   </div>
 </section>
 
