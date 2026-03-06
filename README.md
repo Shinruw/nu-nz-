@@ -35,7 +35,7 @@ bundle exec jekyll serve --livereload
 
 ## 新增教學札記
 
-在 `_posts/blog/` 建立新檔案，命名格式：`YYYY-MM-DD-標題.md`
+在 `_posts/blog/` 建立新檔案，命名格式：`YYYY-MM-DD-標題.md`（檔名可用中文，不影響網址）
 
 ```yaml
 ---
@@ -44,9 +44,24 @@ category: blog
 title: "文章標題"
 date: 2026-03-15
 tags: [標籤一, 標籤二]
+permalink: /blog/YYYY/MM/DD/short-english-slug/
 ---
 
 文章內容寫在這裡...
+```
+
+> **注意：** 每篇文章必須加上 `permalink`，使用英文 slug，避免網址出現中文亂碼。格式為 `/blog/年/月/日/簡短英文/`，例如：
+> ```
+> permalink: /blog/2026/02/24/three-words/
+> ```
+
+### 附圖
+
+將圖片放入 `assets/images/`，建議命名格式：`blog-YYYY-MM-DD.jpg`（同日多張可加 b、c）。
+文章中插入圖片：
+
+```markdown
+![圖片說明]({{ '/assets/images/blog-2026-03-15.jpg' | relative_url }})
 ```
 
 ## 新增學生
