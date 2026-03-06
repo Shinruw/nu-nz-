@@ -4,15 +4,34 @@
 
 ## 本地預覽
 
-```bash
-# 需要 Ruby >= 3.0（建議用 Homebrew 安裝）
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/4.0.0/bin:$PATH"
+### 前置需求
 
+需要 Ruby 4.x（建議用 Homebrew 安裝）。
+
+### 首次設定
+
+若尚未安裝依賴套件，先執行：
+
+```bash
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/4.0.0/bin:$PATH"
+gem install bundler -v 4.0.7
 bundle install
-bundle exec jekyll serve
 ```
 
-瀏覽器開啟 http://localhost:4000
+> **注意：** Gemfile.lock 指定使用 bundler 4.0.7，請確認安裝正確版本，否則啟動時會出現 `LoadError`。
+
+### 啟動伺服器
+
+每次預覽前執行：
+
+```bash
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/4.0.0/bin:$PATH"
+bundle exec jekyll serve --livereload
+```
+
+瀏覽器開啟 http://127.0.0.1:4000/nu-nz-/
+
+`--livereload` 會在檔案修改後自動刷新頁面，可省略。
 
 ## 新增教學札記
 
