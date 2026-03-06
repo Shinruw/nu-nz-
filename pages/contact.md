@@ -29,9 +29,6 @@ permalink: /contact/
         </svg>
         加 LINE 找老師聊聊
       </a>
-      <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--brown-light);">
-        ⚙️ 請將上方連結替換為老師的實際 LINE ID
-      </p>
     </div>
 
     <div style="max-width:560px;margin:3rem auto 0;text-align:center;">
@@ -60,7 +57,7 @@ permalink: /contact/
   <div class="container" style="max-width:600px;">
     <div style="font-size:2rem;margin-bottom:1rem;">🌱</div>
     <p style="font-size:1.1rem;line-height:1.9;color:var(--brown);">
-      這個網站，是暖字給每個孩子的舞台，<br>
+      這裡是給每個孩子的寫作舞台，<br>
       也是老師與家長之間，溫暖而持續的對話。
     </p>
   </div>
