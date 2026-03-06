@@ -6,11 +6,11 @@ layout: default
   <div class="post-hero">
     <div class="container">
       {% if page.category == 'works' %}
-        {% assign student = site.students | where: "id", page.student_id | first %}
+        {% assign student = site.students | where: "uid", page.student_id | first %}
         <div class="work-author-badge">
           ✍️
           {% if student %}
-            <a href="{{ student.url | relative_url }}" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">{{ student.name }}</a>
+            <a href="{{ student.url | relative_url }}" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">{{ student.name_display }}</a>
           {% else %}
             {{ page.student_id }}
           {% endif %}

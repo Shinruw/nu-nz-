@@ -2,12 +2,12 @@
 layout: default
 ---
 
-{% assign works = site.posts | where: "category", "works" | where: "student_id", page.id | sort: "date" | reverse %}
+{% assign works = site.posts | where: "category", "works" | where: "student_id", page.uid | sort: "date" | reverse %}
 
 <div class="post-hero">
   <div class="container">
     <div class="card-tag" style="display:inline-block;margin-bottom:1rem;">學生作品集</div>
-    <h1>{{ page.name }} 暖字作品集</h1>
+    <h1>{{ page.name_display }} 暖字作品集</h1>
     {% if page.intro and page.intro != "" %}
       <p style="margin-top:1rem;font-size:1.05rem;opacity:0.85;">{{ page.intro }}</p>
     {% endif %}
