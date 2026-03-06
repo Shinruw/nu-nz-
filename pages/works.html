@@ -16,49 +16,38 @@ permalink: /works/
   <div class="container">
     {% assign works_posts = site.posts | where: "category", "works" %}
     {% if works_posts.size > 0 %}
-
-      <!-- 依學生瀏覽 -->
-      {% assign student_ids = works_posts | map: "student_id" | uniq %}
-
-      <div style="margin-bottom:2.5rem;">
-        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
-          <span style="font-size:0.9rem;color:var(--brown-light);">依學生瀏覽：</span>
-          {% for sid in student_ids %}
-            {% assign s = site.students | where: "uid", sid | first %}
-            {% if s %}
-              <a href="{{ s.url | relative_url }}" class="card-tag" style="text-decoration:none;">{{ s.name_display }}</a>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-
-      <div class="cards-grid">
-        {% for post in works_posts %}
-          <article class="card work-card">
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="card-tag">學生作品</span>
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%-m.%-d" }}</time>
-              </div>
-              <h3><a href="{{ post.url | relative_url }}" style="color:var(--brown);">{{ post.title }}</a></h3>
+      {% assign titles = works_posts | map: "title" | uniq %}
+      {% for title in titles %}
+        {% assign theme_works = works_posts | where: "title", title %}
+        <div style="margin-bottom:3.5rem;">
+          <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--peach);">
+            <h2 style="margin:0;font-size:1.2rem;color:var(--brown);">{{ title }}</h2>
+            <time style="font-size:0.82rem;color:var(--brown-light);">{{ theme_works.first.date | date: "%Y.%-m.%-d" }}</time>
+          </div>
+          <div class="cards-grid">
+            {% for post in theme_works %}
               {% assign student = site.students | where: "uid", post.student_id | first %}
-              <div class="author-info">
-                ✍️
-                {% if student %}
-                  <a href="{{ student.url | relative_url }}" style="color:var(--orange);">{{ student.name_display }}</a>
-                {% else %}
-                  {{ post.student_id }}
-                {% endif %}
-                {% if post.grade %} · {{ post.grade }}{% endif %}
-              </div>
-              <p style="margin-top:0.75rem;">{{ post.excerpt | strip_html | truncate: 80 }}</p>
-            </div>
-            <div class="card-footer">
-              <a href="{{ post.url | relative_url }}" class="card-link">閱讀全文</a>
-            </div>
-          </article>
-        {% endfor %}
-      </div>
+              <article class="card work-card">
+                <div class="card-body">
+                  <div class="author-info" style="margin-bottom:0.6rem;">
+                    ✍️
+                    {% if student %}
+                      <a href="{{ student.url | relative_url }}" style="color:var(--orange);font-weight:600;">{{ student.name_display }}</a>
+                    {% else %}
+                      {{ post.student_id }}
+                    {% endif %}
+                    {% if post.grade %} · {{ post.grade }}{% endif %}
+                  </div>
+                  <p style="margin:0;">{{ post.content | strip_html | truncate: 80 }}</p>
+                </div>
+                <div class="card-footer">
+                  <a href="{{ post.url | relative_url }}" class="card-link">閱讀全文</a>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
 
     {% else %}
       <!-- 尚無作品時的提示 -->
