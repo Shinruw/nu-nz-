@@ -35,7 +35,44 @@ layout: default
   <div class="post-content">
     {{ content }}
 
-    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--peach);">
+    {% if page.category == 'blog' %}
+      {% assign blog_posts = site.posts | where: "category", "blog" %}
+      {% for p in blog_posts %}
+        {% if p.url == page.url %}
+          {% assign current_index = forloop.index0 %}
+        {% endif %}
+      {% endfor %}
+      {% assign newer_index = current_index | minus: 1 %}
+      {% assign older_index = current_index | plus: 1 %}
+      {% assign newer_post = blog_posts[newer_index] %}
+      {% assign older_post = blog_posts[older_index] %}
+      {% if newer_post or older_post %}
+        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--peach);">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div>
+              {% if older_post %}
+                <a href="{{ older_post.url | relative_url }}" style="display:flex;flex-direction:column;gap:0.25rem;text-decoration:none;padding:1rem;background:var(--peach);border-radius:var(--radius-sm);height:100%;box-sizing:border-box;">
+                  <span style="font-size:0.75rem;color:var(--brown-light);">← 上一篇</span>
+                  <span style="font-size:0.75rem;color:var(--brown-light);">{{ older_post.date | date: "%Y.%-m.%-d" }}</span>
+                  <span style="color:var(--brown);font-weight:600;font-size:0.9rem;line-height:1.5;margin-top:0.25rem;">{{ older_post.title }}</span>
+                </a>
+              {% endif %}
+            </div>
+            <div>
+              {% if newer_post %}
+                <a href="{{ newer_post.url | relative_url }}" style="display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;text-decoration:none;padding:1rem;background:var(--peach);border-radius:var(--radius-sm);height:100%;box-sizing:border-box;text-align:right;">
+                  <span style="font-size:0.75rem;color:var(--brown-light);">下一篇 →</span>
+                  <span style="font-size:0.75rem;color:var(--brown-light);">{{ newer_post.date | date: "%Y.%-m.%-d" }}</span>
+                  <span style="color:var(--brown);font-weight:600;font-size:0.9rem;line-height:1.5;margin-top:0.25rem;">{{ newer_post.title }}</span>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--peach);">
       {% if page.category == 'works' %}
         <a href="{{ '/works' | relative_url }}" class="card-link">← 回到學生作品</a>
       {% else %}
