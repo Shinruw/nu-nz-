@@ -17,14 +17,17 @@ permalink: /works/
     {% assign works_posts = site.posts | where: "category", "works" %}
     {% if works_posts.size > 0 %}
 
-      <!-- 依學生分組 -->
-      {% assign authors = works_posts | map: "author" | uniq | sort %}
+      <!-- 依學生瀏覽 -->
+      {% assign student_ids = works_posts | map: "student_id" | uniq %}
 
       <div style="margin-bottom:2.5rem;">
         <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
           <span style="font-size:0.9rem;color:var(--brown-light);">依學生瀏覽：</span>
-          {% for author in authors %}
-            <a href="#{{ author | slugify }}" class="card-tag" style="text-decoration:none;cursor:pointer;">{{ author }}</a>
+          {% for sid in student_ids %}
+            {% assign s = site.students | where: "id", sid | first %}
+            {% if s %}
+              <a href="{{ s.url | relative_url }}" class="card-tag" style="text-decoration:none;">{{ s.name }}</a>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
@@ -38,9 +41,14 @@ permalink: /works/
                 <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%-m.%-d" }}</time>
               </div>
               <h3><a href="{{ post.url | relative_url }}" style="color:var(--brown);">{{ post.title }}</a></h3>
+              {% assign student = site.students | where: "id", post.student_id | first %}
               <div class="author-info">
                 ✍️
-                <a href="#{{ post.author | slugify }}" style="color:var(--orange);">{{ post.author }}</a>
+                {% if student %}
+                  <a href="{{ student.url | relative_url }}" style="color:var(--orange);">{{ student.name }}</a>
+                {% else %}
+                  {{ post.student_id }}
+                {% endif %}
                 {% if post.grade %} · {{ post.grade }}{% endif %}
               </div>
               <p style="margin-top:0.75rem;">{{ post.excerpt | strip_html | truncate: 80 }}</p>

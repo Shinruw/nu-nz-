@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+{% assign works = site.posts | where: "category", "works" | where: "student_id", page.id | sort: "date" | reverse %}
+
+<div class="post-hero">
+  <div class="container">
+    <div class="card-tag" style="display:inline-block;margin-bottom:1rem;">學生作品集</div>
+    <h1>{{ page.name }} 暖字作品集</h1>
+    {% if page.intro and page.intro != "" %}
+      <p style="margin-top:1rem;font-size:1.05rem;opacity:0.85;">{{ page.intro }}</p>
+    {% endif %}
+    <div class="post-meta">
+      <span>共 {{ works.size }} 篇作品</span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% if works.size > 0 %}
+      <table class="works-table">
+        <thead>
+          <tr>
+            <th>作品標題</th>
+            <th>學校</th>
+            <th>年級</th>
+            <th>日期</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for work in works %}
+            <tr>
+              <td><a href="{{ work.url | relative_url }}" style="color:var(--brown);font-weight:500;">{{ work.title }}</a></td>
+              <td>{{ work.school }}</td>
+              <td>{{ work.grade }}</td>
+              <td>{{ work.date | date: "%Y.%-m.%-d" }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p style="color:var(--brown-light);text-align:center;padding:3rem 0;">作品即將登場。</p>
+    {% endif %}
+
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--peach);">
+      <a href="{{ '/works' | relative_url }}" class="card-link">← 回到學生作品</a>
+    </div>
+  </div>
+</section>

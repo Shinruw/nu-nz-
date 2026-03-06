@@ -30,6 +30,9 @@ collections:
   works:
     output: true
     permalink: /works/:name/
+  students:
+    output: true
+    permalink: /students/:name/
 
 # Defaults
 defaults:
@@ -43,6 +46,11 @@ defaults:
       type: "works"
     values:
       layout: "work"
+  - scope:
+      path: ""
+      type: "students"
+    values:
+      layout: "student"
 
 # Exclude from build
 exclude:

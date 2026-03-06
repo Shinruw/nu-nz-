@@ -611,6 +611,33 @@ p  { margin-bottom: 1rem; }
   margin-top: 0.5rem;
 }
 
+/* Student collection page */
+.works-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.works-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--peach);
+  color: var(--brown-light);
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+.works-table td {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--peach);
+  color: var(--brown);
+  vertical-align: middle;
+}
+.works-table tr:last-child td {
+  border-bottom: none;
+}
+.works-table tr:hover td {
+  background: var(--cream);
+}
+
 /* ── About Page ── */
 .about-intro {
   display: grid;
