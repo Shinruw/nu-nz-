@@ -81,3 +81,24 @@ layout: default
     </div>
   </div>
 </article>
+
+{% if page.category == 'blog' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% if page.description %}"description": "{{ page.description | escape }}",{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "李淑貞"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "暖字表達寫作班",
+    "url": "{{ site.url }}{{ site.baseurl }}/"
+  }
+}
+</script>
+{% endif %}

@@ -14,11 +14,29 @@
   <!-- Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
   <!-- Open Graph -->
   <meta property="og:title" content="{% if page.name_display %}{{ page.name_display }} 暖字作品集 | {{ site.title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_TW">
+
+  <!-- Schema: EducationalOrganization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "暖字表達寫作班",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "founder": {
+      "@type": "Person",
+      "name": "李淑貞"
+    }
+  }
+  </script>
 </head>
 <body>
 

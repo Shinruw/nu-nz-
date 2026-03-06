@@ -101,7 +101,7 @@ permalink: /about/
       {% assign class_photos = "class-1.jpg,class-2.jpg,class-3.jpg,class-4.jpg,class-5.jpg,class-6.jpg" | split: "," %}
       {% for photo in class_photos %}
       <div style="border-radius:16px;overflow:hidden;height:220px;">
-        <img src="{{ '/assets/images/' | append: photo | relative_url }}" alt="課堂照片" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="{{ '/assets/images/' | append: photo | relative_url }}" alt="暖字表達寫作班課堂實況" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       {% endfor %}
     </div>
