@@ -16,14 +16,7 @@ permalink: /about/
   <div class="container">
     <div class="about-intro">
       <div class="about-photo">
-        <div class="about-photo-placeholder">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="opacity:0.4;">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          <span>老師照片</span>
-          <small>assets/images/teacher.jpg</small>
-        </div>
+        <img src="{{ '/assets/images/teacher.jpg' | relative_url }}" alt="李淑貞老師" class="about-teacher-img">
       </div>
       <div class="about-text">
         <h2>李淑貞老師的故事</h2>
